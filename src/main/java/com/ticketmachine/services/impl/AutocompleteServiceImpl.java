@@ -2,6 +2,7 @@ package com.ticketmachine.services.impl;
 
 
 import com.ticketmachine.dtos.StationDTO;
+import com.ticketmachine.models.Station;
 import com.ticketmachine.repositories.StationRepository;
 import com.ticketmachine.services.AutocompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class AutocompleteServiceImpl implements AutocompleteService {
         List<Character> possiblesCharacters = updateNextPossiblesCharacters(oldValue.getPossibleWords(), word);
         List<String> possibleWords = updatePossibleWords(oldValue.getPossibleWords(), word);
         return convertToDTO(possiblesCharacters, possibleWords);
+    }
+
+    @Override
+    public List<Station> listAll() {
+        return stationRepository.findAll();
     }
 
     private StationDTO convertToDTO(final List<Character> characters, final List<String> words) {

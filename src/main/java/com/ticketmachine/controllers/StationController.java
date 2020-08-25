@@ -3,12 +3,15 @@ package com.ticketmachine.controllers;
 
 import com.ticketmachine.cache.ICache;
 import com.ticketmachine.dtos.StationDTO;
+import com.ticketmachine.models.Station;
 import com.ticketmachine.services.AutocompleteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class StationController {
@@ -32,5 +35,10 @@ public class StationController {
         StationDTO dto = stationService.autocomplete(word);
         cache.add(word, dto);
         return ResponseEntity.ok(dto);
+    }
+
+    @GetMapping(value = "/stations", produces = "application/json")
+    public ResponseEntity<List<Station>> listAll() {
+        return ResponseEntity.ok(stationService.listAll());
     }
 }
