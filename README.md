@@ -41,9 +41,17 @@ docker-compose up
 The application will be available at: [localhost:9090](http://localhost:9090/)
 Endpoints availables: 
 [Autocomplete](http://localhost:9090/autocomplete/{word})
+
+
 [localhost:9090/stations](http://localhost:9090/stations)
+
+
 [Swagger-ui](http://localhost:9090/swagger-ui.html)
+
+
 [Actuator-health](http://localhost:9090/actuator/health)
+
+
 [Actuator-info](http://localhost:9090/actuator/info)
 
 ### Test
