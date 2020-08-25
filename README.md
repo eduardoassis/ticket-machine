@@ -40,6 +40,8 @@ docker-compose up
 ```
 The application will be available at: [localhost:9090](http://localhost:9090/)
 Endpoints availables: 
+
+
 [Autocomplete](http://localhost:9090/autocomplete/{word})
 
 
