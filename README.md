@@ -18,6 +18,7 @@ Sonarquebe will be available at: [localhost:9000](http://localhost:9000/)
 To log in sonarqube use:
 
 `Username: admin`
+
 `Password: admin`
 
 After sonarqube is up, go to the application's root directory and run the following command:
