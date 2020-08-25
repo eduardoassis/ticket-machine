@@ -39,6 +39,8 @@ In that directory run the command:
 docker-compose up
 ```
 The application will be available at: [localhost:9090](http://localhost:9090/)
+
+
 Endpoints availables: 
 
 
