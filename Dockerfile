@@ -23,8 +23,6 @@ COPY src src
 RUN ./mvnw package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
-FROM openjdk:8-jre-alpine
-
 ARG DEPENDENCY=/app/target/dependency
 
 # Copy project dependencies from the build stage
