@@ -8,9 +8,6 @@ Steps to run and test the application:
 
 ### Code quality
 
-
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
-
 To view code quality metrics, use sonarqube. To do this, access the folder `sonarqube/` where the document docker-compose.yml is to run a container with sonarqube. Within that directory run:
 
 ```sh
