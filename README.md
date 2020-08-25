@@ -1,5 +1,9 @@
 # Train ticket machine
 
+### Prerequisites
+
+`Docker` and `docker-compose`
+
 Steps to run and test the application:
 
 ### Code quality
