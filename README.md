@@ -38,6 +38,9 @@ In that directory run the command:
 ```sh
 docker-compose up
 ```
+
+If something goes wrong with docker-compose, run it as a maven application locally.
+
 The application will be available at: [localhost:9090](http://localhost:9090/)
 
 
