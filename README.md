@@ -38,7 +38,7 @@ In that directory run the command:
 ```sh
 docker-compose up
 ```
-The application will be available at: [localhost:9000](http://localhost:9000/)
+The application will be available at: [localhost:9090](http://localhost:9090/)
 Endpoints availables: 
 [Autocomplete](http://localhost:9090/autocomplete/{word})
 [localhost:9090/stations](http://localhost:9090/stations)
