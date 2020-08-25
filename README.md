@@ -21,7 +21,7 @@ To log in sonarqube use:
 
 `Password: admin`
 
-After sonarqube is up, go to the application's root directory and run the following command:
+If necessary, after sonarqube is up, go to the application's root directory and run the following command:
 
 ```
 mvn clean verify -P sonar: sonar -Dsonar.projectKey = ticket-machine -Dsonar.host.url = http: // localhost: 9000 -Dsonar.login =597de192debd772c163264dac343cfb03084b31d
