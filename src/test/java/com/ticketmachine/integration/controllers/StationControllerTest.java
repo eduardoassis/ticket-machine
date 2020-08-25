@@ -1,5 +1,6 @@
 package com.ticketmachine.integration.controllers;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ticketmachine.builders.StationBuilder;
 import com.ticketmachine.dtos.StationDTO;
@@ -14,7 +15,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -102,4 +105,24 @@ public class StationControllerTest {
         assertTrue(timeSecondCall < timeFirstCall);
     }
 
+    @Test
+    void shouldListAll() throws Exception {
+
+        AtomicReference<List<Station>> atomicReference = new AtomicReference<>();
+        mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/stations")
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andDo(mvcResult -> {
+                            String json = mvcResult.getResponse().getContentAsString();
+                            atomicReference.set(objectMapper.readValue(json, new TypeReference<List<Station>>(){}));
+                        }
+                );
+
+        List<Station> list = atomicReference.get();
+        assertNotNull(list);
+        assertFalse(list.isEmpty());
+        assertEquals(4, list.size());
+    }
 }
