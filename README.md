@@ -24,10 +24,12 @@ To log in sonarqube use:
 If necessary, after sonarqube is up, go to the application's root directory and run the following command:
 
 ```
-mvn clean verify -P sonar: sonar -Dsonar.projectKey = ticket-machine -Dsonar.host.url = http: // localhost: 9000 -Dsonar.login =597de192debd772c163264dac343cfb03084b31d
+mvn clean verify -P sonar:sonar -Dsonar.projectKey=ticket-machine -Dsonar.host.url=http://localhost:9000 -Dsonar.login=597de192debd772c163264dac343cfb03084b31d
 ```
 
 And then update sonarqube to view the project evaluation.
+
+You may need to create a new project on sonarqube and generate a new token
 
 ### Run the application
 
