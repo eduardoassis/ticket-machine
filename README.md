@@ -33,12 +33,11 @@ You may need to create a new project on sonarqube and generate a new token
 
 ### Run the application
 
-To run the application, go to the application's root directory, where you will see two files: `Dockerfile` and `docker-compose.yml`.
-
-In that directory run the command:
+To run the application, go to the application's root directory, where you will see the `pom.xml` file and run the commands:
 
 ```sh
-docker-compose up
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=app/ticket-machine
+docker container run -p 9090:9090 app/ticket-machine
 ```
 
 If something goes wrong with docker-compose, run it as a maven application locally.
