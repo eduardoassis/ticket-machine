@@ -21,25 +21,28 @@ To log in sonarqube use:
 
 `Password: admin`
 
-If necessary, after sonarqube is up, go to the application's root directory and run the following command:
+Create a new project on sonarqube and generate a new token.
+
+
+If necessary, after sonarqube is up, go to the application's root directory and run the following command with the generated token:
 
 ```
-mvn clean verify -P sonar: sonar -Dsonar.projectKey = ticket-machine -Dsonar.host.url = http: // localhost: 9000 -Dsonar.login =597de192debd772c163264dac343cfb03084b31d
+mvn clean verify -P sonar:sonar -Dsonar.projectKey=ticket-machine -Dsonar.host.url=http://localhost:9000 -Dsonar.login={token}
 ```
 
 And then update sonarqube to view the project evaluation.
 
+
 ### Run the application
 
-To run the application, go to the application's root directory, where you will see two files: `Dockerfile` and `docker-compose.yml`.
-
-In that directory run the command:
+To run the application, go to the application's root directory, where you will see the `pom.xml` file and run the commands:
 
 ```sh
-docker-compose up
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=app/ticket-machine
+docker container run -p 9090:9090 app/ticket-machine
 ```
 
-If something goes wrong with docker-compose, run it as a maven application locally.
+If something goes wrong with docker, run it as a maven application locally.
 
 The application will be available at: [localhost:9090](http://localhost:9090/)
 
